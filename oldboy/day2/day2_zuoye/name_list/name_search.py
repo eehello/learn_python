@@ -10,7 +10,7 @@ search_name = str(input('请输入你要查询的用户:'))
 
 f_name = open('name_list.cfg' , 'r')
 for name in f_name:
-    name = name.strip().split(':')
+    name = name
     name_dict[name[0]] = name[1]
     if search_name in name[0]:
         ok.append(name[0])
