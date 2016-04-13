@@ -20,5 +20,4 @@ f_name.close()
 print('符合查询条件有%d位\n 分别为:' % len(ok))
 
 for i in name_dict:
-    print('%s:%s' % (i,name_dict[i])
-   
+    print('%s:%s' % (i,name_dict[i]))
