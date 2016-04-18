@@ -107,5 +107,5 @@ def md5_jm(arg):
 a = md5_jm('admin')
 print(a)
 '''
-with open('test001.cfg', 'wb') as f1:
-    f1.write('test')
+with open('test003.cfg', 'wb') as f1:
+    f1.write('test003')
