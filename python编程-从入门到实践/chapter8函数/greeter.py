@@ -12,7 +12,9 @@ def greet_user():
     """显示简单的问候语"""
     print("Hello!")
 
-def greet_user001(username):
+def greet_user001(username="name"):
     print("Hello, "+ username.title() + "!")
 
 greet_user001("df")
+greet_user001(username="xx")
+greet_user001()
