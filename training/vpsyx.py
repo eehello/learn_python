@@ -5,6 +5,8 @@
 from urllib import request
 from os import system
 import time as sys_time
+import datetime
+
 
 my_pid='123'
 my_email='xxxx@xxx.com'
@@ -12,6 +14,17 @@ my_email='xxxx@xxx.com'
 try:
     flag=0
     while True:
+
+        now_date = datetime.datetime.now()
+        end_year = int(now_date.strftime('%Y'))
+        end_month = int(now_date.strftime('%m'))
+        end_day = int(now_date.strftime('%d'))
+        end_hour = int(now_date.strftime('%H'))
+
+        end_times = datetime.datetime(end_year, end_month, end_day, end_hour)
+        end_time = end_times.strftime('%Y-%m-%d %H:00')
+
+
         url='https://billing.spartanhost.net/cart.php?a=add&pid='+my_pid
         header={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
         req=request.Request(url,headers=header)
@@ -20,7 +33,7 @@ try:
             f.write('有货了，链接是:'+url)
         if str(page).find('out of stock')>0:
             flag=0
-            print('无货')
+            print('无货--' + end_time)
         else:
             flag=flag+1
             print('有货')
