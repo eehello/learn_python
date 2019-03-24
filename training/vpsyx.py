@@ -20,9 +20,10 @@ try:
         end_month = int(now_date.strftime('%m'))
         end_day = int(now_date.strftime('%d'))
         end_hour = int(now_date.strftime('%H'))
+        end_minute = int(now_date.strftime('%M'))
 
-        end_times = datetime.datetime(end_year, end_month, end_day, end_hour)
-        end_time = end_times.strftime('%Y-%m-%d %H:00')
+        end_times = datetime.datetime(end_year, end_month, end_day, end_hour, end_minute)
+        end_time = end_times.strftime('%Y-%m-%d %H:%M')
 
 
         url='https://billing.spartanhost.net/cart.php?a=add&pid='+my_pid
@@ -30,13 +31,13 @@ try:
         req=request.Request(url,headers=header)
         page=request.urlopen(req).read()
         with open('content.txt','w') as f:
-            f.write('有货了，链接是:'+url)
+            f.write(end_time+'有货了，链接是:'+url)
         if str(page).find('out of stock')>0:
             flag=0
-            print('无货--' + end_time)
+            print('无货--'+end_time)
         else:
             flag=flag+1
-            print('有货')
+            print('有货--'+end_time)
             if flag<3:
                 system("mail -s '有货了' {0} < content.txt".format(my_email))
         sys_time.sleep(600)    
