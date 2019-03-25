@@ -1,6 +1,9 @@
 #!/usr/bin/eny python
 # coding=utf-8
 
+# readme
+# spartanhost便宜100G硬盘VPS购买脚本。
+# 因一直无货，故网上找了个脚本，并对其进行了小幅度修改。
 
 from urllib import request
 from os import system
