@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+# coding=utf-8
+"""
+# @Created on : 2019/07/13 23:22
+# @Author     : ldf (ldf@eehello.com)
+# @Link       : http://www.eehello.com
+# @Version    :
+# 本程序在python3.7下测试通过
+"""
+
+
 from random import randint
 
 flat = 1
