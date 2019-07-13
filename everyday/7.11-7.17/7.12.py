@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-# coding=utf-8
-"""
-# @Created on : 2019/07/12 21:59
-# @Author     : ldf (ldf@eehello.com)
-# @Link       : http://www.eehello.com
-# @Version    : 
-# 本程序在python3.7下测试通过
-"""
-
 from random import randint
 
 flat = 1
@@ -30,4 +20,3 @@ while flat:
             continue
         if a < x:
             print("加油，离正确答案不远了，再大一点！")
-
